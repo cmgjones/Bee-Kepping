@@ -24,7 +24,7 @@ namespace Eco.Mods.TechTree
         public override string Description                      { get { return "A mixture of antioxidents to reviatlize and nourish your body"; } } // item description upon hovering over an item
 
         private static Nutrients nutrition = new Nutrients()    { Carbs = 50, Fat = 50, Protein = 50, Vitamins = 50}; // The effects of eating the item for example mashed potatoe would have more carbs than protein where as steak would be the reverse !!Balance is vital!!
-        public override float Calories                          { get { return 2000; } } // Number of calories the food will give you >> thew more complicated and resources intesive the recipe the more ballanced and more calories it should give
+        public override float Calories                          { get { return 1500; } } // Number of calories the food will give you >> thew more complicated and resources intesive the recipe the more ballanced and more calories it should give
         public override Nutrients Nutrition                     { get { return nutrition; } } //Dont touch this :)
     }
 
