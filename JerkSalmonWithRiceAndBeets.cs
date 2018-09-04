@@ -52,7 +52,7 @@ namespace Eco.Mods.TechTree
             };
             this.CraftMinutes = CreateCraftTimeValue(typeof(JerkSalmonWithRiceAndBeetsItem), Item.Get<ThaiRiceWithSalmonItem>().UILink(), 15, typeof(HomeCookingSpeedSkill)); // check below for annotation
             // how long it will take to craft the item , the recipe name again ,           change this to recipe name     (time taken)
-            this.Initialize("ThaiRiceWithSalmon", typeof(JerkSalmonWithRiceAndBeetsItem));
+            this.Initialize("JerkSalmonWithRiceAndBeets", typeof(JerkSalmonWithRiceAndBeetsItem));
             //       how its seen in the workbench   , Your recipe name
             CraftingComponent.AddRecipe(typeof(StoveObject), this);
             // add the recipe to craftin table . (workbench needed)
