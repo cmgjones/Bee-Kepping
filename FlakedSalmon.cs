@@ -17,7 +17,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [Weight(300)]
-    public partial class FlakedHoneyssSaladItem : //Name of the item in unity @DO NOT CHANGE USE A DIFFERENT NAME FROM THE UNITY VERSION
+    public partial class FlakedHoneySaladItem : //Name of the item in unity @DO NOT CHANGE USE A DIFFERENT NAME FROM THE UNITY VERSION
         FoodItem
     {
         public override string FriendlyName                     { get { return "Flaked Salmon Salad With a honey and beet Garnish"; } }  // name given and seen when scrolling through the ingame menus
