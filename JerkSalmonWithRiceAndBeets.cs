@@ -36,7 +36,7 @@ namespace Eco.Mods.TechTree
         {
             this.Products = new CraftingElement[] // dont touch this
             {
-                new CraftingElement<RawFishItem>(), //This is what the recipe will produce this one should be the name of your fooditem
+                new CraftingElement<JerkSalmonWithRiceAndBeetsItem>(), //This is what the recipe will produce this one should be the name of your fooditem
                //things that will be produced
 
             };
@@ -47,12 +47,12 @@ namespace Eco.Mods.TechTree
             // If you require more ingridients copy and paste the line above and edit it to include another ingridient see below for example
             //copied & Pasted
                 new CraftingElement<RawFishItem>(typeof(HomeCookingEfficiencySkill), 4, HomeCookingEfficiencySkill.MultiplicativeStrategy),
-				new CraftingElement<tomateosItem>(typeof(HomeCookingEfficiencySkill), 4, HomeCookingEfficiencySkill.MultiplicativeStrategy),
+				        new CraftingElement<TomatoItem>(typeof(HomeCookingEfficiencySkill), 4, HomeCookingEfficiencySkill.MultiplicativeStrategy),
 
             };
-            this.CraftMinutes = CreateCraftTimeValue(typeof(ThaiRiceWithSalmonRecipe), Item.Get<ThaiRiceWithSalmonItem>().UILink(), 15, typeof(HomeCookingSpeedSkill)); // check below for annotation
+            this.CraftMinutes = CreateCraftTimeValue(typeof(JerkSalmonWithRiceAndBeetsItem), Item.Get<ThaiRiceWithSalmonItem>().UILink(), 15, typeof(HomeCookingSpeedSkill)); // check below for annotation
             // how long it will take to craft the item , the recipe name again ,           change this to recipe name     (time taken)
-            this.Initialize("ThaiRiceWithSalmon", typeof(ThaiRiceWithSalmonRecipe));
+            this.Initialize("ThaiRiceWithSalmon", typeof(JerkSalmonWithRiceAndBeetsItem));
             //       how its seen in the workbench   , Your recipe name
             CraftingComponent.AddRecipe(typeof(StoveObject), this);
             // add the recipe to craftin table . (workbench needed)
