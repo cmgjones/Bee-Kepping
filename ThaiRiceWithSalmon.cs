@@ -47,7 +47,7 @@ namespace Eco.Mods.TechTree
             // If you require more ingridients copy and paste the line above and edit it to include another ingridient see below for example
             //copied & Pasted
                 new CraftingElement<RawFishItem>(typeof(HomeCookingEfficiencySkill), 4, HomeCookingEfficiencySkill.MultiplicativeStrategy),
-				new CraftingElement<tomateosItem>(typeof(HomeCookingEfficiencySkill), 4, HomeCookingEfficiencySkill.MultiplicativeStrategy),
+				new CraftingElement<TomatoItem>(typeof(HomeCookingEfficiencySkill), 4, HomeCookingEfficiencySkill.MultiplicativeStrategy),
 
             };
             this.CraftMinutes = CreateCraftTimeValue(typeof(ThaiRiceWithSalmonRecipe), Item.Get<ThaiRiceWithSalmonItem>().UILink(), 15, typeof(HomeCookingSpeedSkill)); // check below for annotation
