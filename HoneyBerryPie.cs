@@ -24,7 +24,7 @@ namespace Eco.Mods.TechTree
         public override string Description                      { get { return "A warm honey glazed pie."; } } // item description upon hovering over an item
 
         private static Nutrients nutrition = new Nutrients()    { Carbs = 35, Fat = 35, Protein = 25, Vitamins = 9}; // The effects of eating the item for example mashed potatoe would have more carbs than protein where as steak would be the reverse !!Balance is vital!!
-        public override float Calories                          { get { return 550; } } // Number of calories the food will give you >> thew more complicated and resources intesive the recipe the more ballanced and more calories it should give 
+        public override float Calories                          { get { return 550; } } // Number of calories the food will give you >> thew more complicated and resources intesive the recipe the more ballanced and more calories it should give
         public override Nutrients Nutrition                     { get { return nutrition; } } //Dont touch this :)
     }
 
@@ -47,8 +47,8 @@ namespace Eco.Mods.TechTree
             // If you require more ingridients copy and paste the line above and edit it to include another ingridient see below for example
             //copied & Pasted
                 new CraftingElement<FlourItem>(typeof(BasicBakingEfficiencySkill), 14, BasicBakingEfficiencySkill.MultiplicativeStrategy),
-				new CraftingElement<HuckleBerriesItem>(typeof(BasicBakingEfficiencySkill), 20, BasicBakingEfficiencySkill.MultiplicativeStrategy),
-				new CraftingElement<JarOfHoneyItem>(typeof(BasicBakingEfficiencySkill), 2, BasicBakingEfficiencySkill.MultiplicativeStrategy),
+				        new CraftingElement<HuckleBerriesItem>(typeof(BasicBakingEfficiencySkill), 20, BasicBakingEfficiencySkill.MultiplicativeStrategy),
+				        new CraftingElement<JarOfHoneyItem>(typeof(BasicBakingEfficiencySkill), 2, BasicBakingEfficiencySkill.MultiplicativeStrategy),
             };
             this.CraftMinutes = CreateCraftTimeValue(typeof(HoneyBerryPieRecipe), Item.Get<HoneyBerryPieItem>().UILink(), 10, typeof(BasicBakingSpeedSkill)); // check below for annotation
             // how long it will take to craft the item , the recipe name again ,           change this to recipe name     (time taken)
