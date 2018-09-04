@@ -29,20 +29,20 @@ namespace Eco.Mods.TechTree
     using Eco.Shared.Items;
     using Eco.Gameplay.Pipes;
     using Eco.World.Blocks;
-    
-    [Serialized]    
+
+    [Serialized]
     [RequireComponent(typeof(PropertyAuthComponent))]
-    [RequireComponent(typeof(MinimapComponent))]                
-    [RequireComponent(typeof(LinkComponent))]                   
-    [RequireComponent(typeof(CraftingComponent))]               
-    [RequireComponent(typeof(SolidGroundComponent))]            
+    [RequireComponent(typeof(MinimapComponent))]
+    [RequireComponent(typeof(LinkComponent))]
+    [RequireComponent(typeof(CraftingComponent))]
+    [RequireComponent(typeof(SolidGroundComponent))]
     [RequireComponent(typeof(RoomRequirementsComponent))]
     [RequireRoomContainment]
-    [RequireRoomVolume(25)]                              
-    public partial class FermentationObject : 
-        WorldObject    
+    [RequireRoomVolume(25)]
+    public partial class BeeHiveObject :
+        WorldObject
     {
-        public override string FriendlyName { get { return "Cjs mod crafting bench"; } } 
+        public override string FriendlyName { get { return "Bee Hive "; } }
 
 
         protected override void Initialize()
@@ -56,45 +56,45 @@ namespace Eco.Mods.TechTree
         {
             base.Destroy();
         }
-       
+
     }
 
     [Serialized]
-    public partial class FermentationItem :
-        WorldObjectItem<FermentationObject> 
+    public partial class BeeHiveItem :
+        WorldObjectItem<BeeHiveObject>
     {
-        public override string FriendlyName { get { return "Cj's Mod bench"; } } 
-        public override string Description  { get { return  "Craft all the coolest items from Cj's modpack with this thing!"; } }
+        public override string FriendlyName { get { return "Bee Hive"; } }
+        public override string Description  { get { return  "Sweet Sweet Honey!"; } }
 
-        static FermentationItem()
+        static BeeHiveItem()
         {
-            
+
         }
 
     }
 
 
-    [RequiresSkill(typeof(WoodworkingSkill), 0)]
-    public partial class FermentationRecipe : Recipe
+    [RequiresSkill(typeof(WoodworkingSkill), 2)]
+    public partial class BeeHiveRecipe : Recipe
     {
-        public FermentationRecipe()
+        public BeeHiveRecipe()
         {
             this.Products = new CraftingElement[]
             {
-                new CraftingElement<FermentationItem>(),
+                new CraftingElement<BeeHiveItem>(),
             };
 
             this.Ingredients = new CraftingElement[]
             {
-                new CraftingElement<LogItem>(typeof(WoodworkingEfficiencySkill), 30, WoodworkingEfficiencySkill.MultiplicativeStrategy),
-                new CraftingElement<StoneItem>(typeof(WoodworkingEfficiencySkill), 20, WoodworkingEfficiencySkill.MultiplicativeStrategy),
-                new CraftingElement<IronIngotItem>(typeof(MetalworkingEfficiencySkill), 10, MetalworkingEfficiencySkill.MultiplicativeStrategy),				
+                new CraftingElement<LogItem>(typeof(WoodworkingEfficiencySkill), 10, WoodworkingEfficiencySkill.MultiplicativeStrategy),
+                new CraftingElement<BoardItem>(typeof(WoodworkingEfficiencySkill), 20, WoodworkingEfficiencySkill.MultiplicativeStrategy),
+                new CraftingElement<IronIngotItem>(typeof(MetalworkingEfficiencySkill), 1, MetalworkingEfficiencySkill.MultiplicativeStrategy),
             };
             SkillModifiedValue value = new SkillModifiedValue(1, WoodworkingSpeedSkill.MultiplicativeStrategy, typeof(WoodworkingSpeedSkill), Localizer.DoStr("craft time"));
-            SkillModifiedValueManager.AddBenefitForObject(typeof(FermentationRecipe), Item.Get<FermentationItem>().UILink(), value);
-            SkillModifiedValueManager.AddSkillBenefit(Item.Get<FermentationItem>().UILink(), value);
+            SkillModifiedValueManager.AddBenefitForObject(typeof(BeeHiveRecipe), Item.Get<BeeHiveItem>().UILink(), value);
+            SkillModifiedValueManager.AddSkillBenefit(Item.Get<BeeHiveItem>().UILink(), value);
             this.CraftMinutes = value;
-            this.Initialize("CjsFermentation", typeof(FermentationRecipe));
+            this.Initialize("BeeHive", typeof(BeeHiveRecipe));
             CraftingComponent.AddRecipe(typeof(RiceMilkChurnObject), this);
         }
     }
