@@ -23,7 +23,7 @@ namespace Eco.Mods.TechTree
         public override string FriendlyName                     { get { return "HoneyBerryPie"; } }  // name given and seen when scrolling through the ingame menus
         public override string Description                      { get { return "A warm honey glazed pie."; } } // item description upon hovering over an item
 
-        private static Nutrients nutrition = new Nutrients()    { Carbs = 35, Fat = 35, Protein = 25, Vitamins = 9}; // The effects of eating the item for example mashed potatoe would have more carbs than protein where as steak would be the reverse !!Balance is vital!!
+        private static Nutrients nutrition = new Nutrients()    { Carbs = 35, Fat = 45, Protein = 25, Vitamins = 9}; // The effects of eating the item for example mashed potatoe would have more carbs than protein where as steak would be the reverse !!Balance is vital!!
         public override float Calories                          { get { return 550; } } // Number of calories the food will give you >> thew more complicated and resources intesive the recipe the more ballanced and more calories it should give
         public override Nutrients Nutrition                     { get { return nutrition; } } //Dont touch this :)
     }
