@@ -47,8 +47,8 @@ namespace Eco.Mods.TechTree
             // If you require more ingridients copy and paste the line above and edit it to include another ingridient see below for example
             //copied & Pasted
                 new CraftingElement<VegetableMedleyItem>(typeof(HomeCookingEfficiencySkill), 14, HomeCookingEfficiencySkill.MultiplicativeStrategy),
-				new CraftingElement<OilItem>(typeof(HomeCookingEfficiencySkill), 2, HomeCookingEfficiencySkill.MultiplicativeStrategy),
-				new CraftingElement<JarOfHoneyItem>(typeof(HomeCookingEfficiencySkill), 3, HomeCookingEfficiencySkill.MultiplicativeStrategy),
+				        new CraftingElement<OilItem>(typeof(HomeCookingEfficiencySkill), 2, HomeCookingEfficiencySkill.MultiplicativeStrategy),
+				        new CraftingElement<JarOfHoneyItem>(typeof(HomeCookingEfficiencySkill), 3, HomeCookingEfficiencySkill.MultiplicativeStrategy),
             };
             this.CraftMinutes = CreateCraftTimeValue(typeof(Flaked Salmon Salad With a honey and beet GarnishRecipe), Item.Get<Flaked Salmon Salad With a honey and beet GarnishItem>().UILink(), 10, typeof(HomeCookingSpeedSkill)); // check below for annotation
             // how long it will take to craft the item , the recipe name again ,           change this to recipe name     (time taken)
