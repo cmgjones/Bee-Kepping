@@ -32,7 +32,7 @@ namespace Eco.Mods.TechTree
 
     public partial class ChunkySausageAndTomatoRiceRecipe : Recipe // "JerkSalmonWithRiceAndBeetsRecipe : Recipe" labels the name of the recipe that will be displayed in the workbench.
     {
-        publicChunkySausageAndTomatoRiceRecipe() // include the same name as the food you are attempting to create before recipe eg, yourfoodrecipe()
+        public ChunkySausageAndTomatoRiceRecipe() // include the same name as the food you are attempting to create before recipe eg, yourfoodrecipe()
         {
             this.Products = new CraftingElement[] // dont touch this
             {
@@ -47,12 +47,12 @@ namespace Eco.Mods.TechTree
             // If you require more ingridients copy and paste the line above and edit it to include another ingridient see below for example
             //copied & Pasted
                 new CraftingElement<RiceItem>(typeof(HomeCookingEfficiencySkill), 20, HomeCookingEfficiencySkill.MultiplicativeStrategy),
-				new CraftingElement<TomatoItem>(typeof(HomeCookingEfficiencySkill), 5, HomeCookingEfficiencySkill.MultiplicativeStrategy),
+				        new CraftingElement<TomatoItem>(typeof(HomeCookingEfficiencySkill), 5, HomeCookingEfficiencySkill.MultiplicativeStrategy),
 
             };
-            this.CraftMinutes = CreateCraftTimeValue(typeof(ThaiRiceWithSalmonRecipe), Item.Get<ThaiRiceWithSalmonItem>().UILink(), 15, typeof(HomeCookingSpeedSkill)); // check below for annotation
+            this.CraftMinutes = CreateCraftTimeValue(typeof(ChunkySausageAndTomatoRiceRecipe), Item.Get<ChunkySausageAndTomatoRiceItem>().UILink(), 15, typeof(HomeCookingSpeedSkill)); // check below for annotation
             // how long it will take to craft the item , the recipe name again ,           change this to recipe name     (time taken)
-            this.Initialize("ThaiRiceWithSalmon", typeof(ThaiRiceWithSalmonRecipe));
+            this.Initialize("ChunkySausageAndTomatoRice", typeof(ChunkySausageAndTomatoRiceRecipe));
             //       how its seen in the workbench   , Your recipe name
             CraftingComponent.AddRecipe(typeof(StoveObject), this);
             // add the recipe to craftin table . (workbench needed)
