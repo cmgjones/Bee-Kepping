@@ -29,20 +29,20 @@ namespace Eco.Mods.TechTree
     using Eco.Shared.Items;
     using Eco.Gameplay.Pipes;
     using Eco.World.Blocks;
-    
-    [Serialized]    
+
+    [Serialized]
     [RequireComponent(typeof(PropertyAuthComponent))]
-    [RequireComponent(typeof(HousingComponent))]                  
-    [RequireComponent(typeof(SolidGroundComponent))]            
-    public partial class Chair1Object : 
-        WorldObject    
+    [RequireComponent(typeof(HousingComponent))]
+    [RequireComponent(typeof(SolidGroundComponent))]
+    public partial class Chair1Object :
+        WorldObject
     {
-        public override string FriendlyName { get { return "Chair1"; } } 
+        public override string FrienadlyName { get { return "Chair1"; } } 
 
 
         protected override void Initialize()
         {
-            this.GetComponent<HousingComponent>().Set(Chair1Item.HousingVal);                                
+            this.GetComponent<HousingComponent>().Set(Chair1Item.HousingVal);
 
 
         }
@@ -51,28 +51,28 @@ namespace Eco.Mods.TechTree
         {
             base.Destroy();
         }
-       
+
     }
 
     [Serialized]
     public partial class Chair1Item :
-        WorldObjectItem<Chair1Object> 
+        WorldObjectItem<Chair1Object>
     {
-        public override string FriendlyName { get { return "Chair1"; } } 
+        public override string FriendlyName { get { return "Chair1"; } }
         public override string Description  { get { return  "A raised surface supported by legs. Without the back, it might be a stool."; } }
 
         static Chair1Item()
         {
-            
+
         }
 
         [TooltipChildren] public HousingValue HousingTooltip { get { return HousingVal; } }
-        [TooltipChildren] public static HousingValue HousingVal { get { return new HousingValue() 
+        [TooltipChildren] public static HousingValue HousingVal { get { return new HousingValue()
                                                 {
                                                     Category = "General",
-                                                    Val = 0.5f,                                   
-                                                    TypeForRoomLimit = "Seating", 
-                                                    DiminishingReturnPercent = 0.9f    
+                                                    Val = 0.5f,
+                                                    TypeForRoomLimit = "Seating",
+                                                    DiminishingReturnPercent = 0.9f
         };}}
     }
 
@@ -91,7 +91,7 @@ namespace Eco.Mods.TechTree
             {
                 new CraftingElement<LogItem>(typeof(WoodworkingEfficiencySkill), 20, WoodworkingEfficiencySkill.MultiplicativeStrategy),
                 new CraftingElement<BoardItem>(typeof(WoodworkingEfficiencySkill), 20, WoodworkingEfficiencySkill.MultiplicativeStrategy),
-                new CraftingElement<PlantFibersItem>(typeof(WoodworkingEfficiencySkill), 30, WoodworkingEfficiencySkill.MultiplicativeStrategy),   
+                new CraftingElement<PlantFibersItem>(typeof(WoodworkingEfficiencySkill), 30, WoodworkingEfficiencySkill.MultiplicativeStrategy),
             };
             SkillModifiedValue value = new SkillModifiedValue(5, WoodworkingSpeedSkill.MultiplicativeStrategy, typeof(WoodworkingSpeedSkill), Localizer.DoStr("craft time"));
             SkillModifiedValueManager.AddBenefitForObject(typeof(Chair1Recipe), Item.Get<Chair1Item>().UILink(), value);
