@@ -29,24 +29,24 @@ namespace Eco.Mods.TechTree
     using Eco.Shared.Items;
     using Eco.Gameplay.Pipes;
     using Eco.World.Blocks;
-    
-    [Serialized]    
+
+    [Serialized]
     [RequireComponent(typeof(PropertyAuthComponent))]
-    [RequireComponent(typeof(MinimapComponent))]                
-    [RequireComponent(typeof(LinkComponent))]                   
-    [RequireComponent(typeof(CraftingComponent))]               
-    [RequireComponent(typeof(SolidGroundComponent))]            
+    [RequireComponent(typeof(MinimapComponent))]
+    [RequireComponent(typeof(LinkComponent))]
+    [RequireComponent(typeof(CraftingComponent))]
+    [RequireComponent(typeof(SolidGroundComponent))]
     [RequireComponent(typeof(RoomRequirementsComponent))]
-                                 
-    public partial class RiceMilkChurnObject : 
-        WorldObject    
+
+    public partial class RiceMilkChurnObject :
+        WorldObject
     {
-        public override string FriendlyName { get { return "Cjs mod crafting bench"; } } 
+        public override string FriendlyName { get { return "Rice Milk Churn"; } }
 
 
         protected override void Initialize()
         {
-            this.GetComponent<MinimapComponent>().Initialize("Crafting");                                 
+            this.GetComponent<MinimapComponent>().Initialize("Crafting");
 
 
         }
@@ -55,19 +55,19 @@ namespace Eco.Mods.TechTree
         {
             base.Destroy();
         }
-       
+
     }
 
     [Serialized]
     public partial class RiceMilkChurnItem :
-        WorldObjectItem<RiceMilkChurnObject> 
+        WorldObjectItem<RiceMilkChurnObject>
     {
-        public override string FriendlyName { get { return "Cj's Mod bench"; } } 
-        public override string Description  { get { return  "Craft all the coolest items from Cj's modpack with this thing!"; } }
+        public override string FriendlyName { get { return "Rice Milk Churn"; } }
+        public override string Description  { get { return  "Turn rice into milk!!"; } }
 
         static RiceMilkChurnItem()
         {
-            
+
         }
 
     }
@@ -85,16 +85,16 @@ namespace Eco.Mods.TechTree
 
             this.Ingredients = new CraftingElement[]
             {
-                new CraftingElement<LogItem>(typeof(WoodworkingEfficiencySkill), 30, WoodworkingEfficiencySkill.MultiplicativeStrategy),
+                
                 new CraftingElement<StoneItem>(typeof(WoodworkingEfficiencySkill), 20, WoodworkingEfficiencySkill.MultiplicativeStrategy),
-                new CraftingElement<IronIngotItem>(typeof(MetalworkingEfficiencySkill), 10, MetalworkingEfficiencySkill.MultiplicativeStrategy),				
+                new CraftingElement<IronIngotItem>(typeof(MetalworkingEfficiencySkill), 20, MetalworkingEfficiencySkill.MultiplicativeStrategy),
             };
             SkillModifiedValue value = new SkillModifiedValue(1, WoodworkingSpeedSkill.MultiplicativeStrategy, typeof(WoodworkingSpeedSkill), Localizer.DoStr("craft time"));
             SkillModifiedValueManager.AddBenefitForObject(typeof(RiceMilkChurnRecipe), Item.Get<RiceMilkChurnItem>().UILink(), value);
             SkillModifiedValueManager.AddSkillBenefit(Item.Get<RiceMilkChurnItem>().UILink(), value);
             this.CraftMinutes = value;
             this.Initialize("RiceMilkChurn", typeof(RiceMilkChurnRecipe));
-            CraftingComponent.AddRecipe(typeof(CarpentryTableObject), this);
+            CraftingComponent.AddRecipe(typeof(AnvilObject), this);
         }
     }
 }
