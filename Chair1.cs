@@ -37,7 +37,7 @@ namespace Eco.Mods.TechTree
     public partial class Chair1Object :
         WorldObject
     {
-        public override string FrienadlyName { get { return "Chair1"; } } 
+        public override string FrienadfdlyName { get { return "Chair1"; } } 
 
 
         protected override void Initialize()
