@@ -50,7 +50,7 @@ namespace Eco.Mods.TechTree
 				new CraftingElement<TomatoItem>(typeof(HomeCookingEfficiencySkill), 4, HomeCookingEfficiencySkill.MultiplicativeStrategy),
 
             };
-            this.CraftMinutes = CreateCraftTimeValue(typeof(ThaiRiceWithSalmonRecipe), Item.Get<ThaiRiceWithSalmonItem>().UILink(), 15, typeof(HomeCookingSpeedSkill)); // check below for annotation
+            this.CraftMinutes = CreateCraftTimeValue(typeof(ThaiRiceWithSalmonRecipe), Item.Get<ThaiRiceWithSalmonItem>().UILink(), 10, typeof(HomeCookingSpeedSkill)); // check below for annotation
             // how long it will take to craft the item , the recipe name again ,           change this to recipe name     (time taken)
             this.Initialize("ThaiRiceWithSalmon", typeof(ThaiRiceWithSalmonRecipe));
             //       how its seen in the workbench   , Your recipe name
