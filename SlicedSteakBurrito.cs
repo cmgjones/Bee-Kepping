@@ -48,7 +48,7 @@ namespace Eco.Mods.TechTree
             //copied & Pasted
                 new CraftingElement<WheatItem>(typeof(HomeCookingEfficiencySkill), 10, HomeCookingEfficiencySkill.MultiplicativeStrategy),
 
-                new CraftingElement<HoneyItem>(typeof(HomeCookingEfficiencySkill), 5, HomeCookingEfficiencySkill.MultiplicativeStrategy),
+                new CraftingElement<JarOfHoneyItem>(typeof(HomeCookingEfficiencySkill), 5, HomeCookingEfficiencySkill.MultiplicativeStrategy),
 
                 new CraftingElement<HuckleBerryItem>(typeof(HomeCookingEfficiencySkill), 10, HomeCookingEfficiencySkill.MultiplicativeStrategy),
 
