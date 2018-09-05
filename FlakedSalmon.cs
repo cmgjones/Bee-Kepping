@@ -30,13 +30,13 @@ namespace Eco.Mods.TechTree
 
     [RequiresSkill(typeof(HomeCookingSkill), 4)]     // use the wiki to identify the different skill lines and put here what they will need for exmaple the more complicated the recipe and more resource intensive the higher the level that should be required.
 
-    public partial class Flaked Salmon Salad With a honey and beet GarnishRecipe : Recipe // "Flaked Salmon Salad With a honey and beet GarnishRecipe : Recipe" labels the name of the recipe that will be displayed in the workbench.
+    public partial class FlakedHoneySaladRecipe : Recipe // "Flaked Salmon Salad With a honey and beet GarnishRecipe : Recipe" labels the name of the recipe that will be displayed in the workbench.
     {
-        public Flaked Salmon Salad With a honey and beet GarnishRecipe() // include the same name as the food you are attempting to create before recipe eg, yourfoodrecipe()
+        public FlakedHoneySaladRecipe() // include the same name as the food you are attempting to create before recipe eg, yourfoodrecipe()
         {
             this.Products = new CraftingElement[] // dont touch this
             {
-                new CraftingElement<Flaked Salmon Salad With a honey and beet GarnishItem>(), //This is what the recipe will produce this one should be the name of your fooditem
+                new CraftingElement<FlakedHoneySaladItem>(), //This is what the recipe will produce this one should be the name of your fooditem
                //things that will be produced
 
             };
@@ -50,9 +50,9 @@ namespace Eco.Mods.TechTree
 				        new CraftingElement<OilItem>(typeof(HomeCookingEfficiencySkill), 2, HomeCookingEfficiencySkill.MultiplicativeStrategy),
 				        new CraftingElement<JarOfHoneyItem>(typeof(HomeCookingEfficiencySkill), 3, HomeCookingEfficiencySkill.MultiplicativeStrategy),
             };
-            this.CraftMinutes = CreateCraftTimeValue(typeof(Flaked Salmon Salad With a honey and beet GarnishRecipe), Item.Get<Flaked Salmon Salad With a honey and beet GarnishItem>().UILink(), 10, typeof(HomeCookingSpeedSkill)); // check below for annotation
+            this.CraftMinutes = CreateCraftTimeValue(typeof(FlakedHoneySaladRecipe), Item.Get<FlakedHoneySaladItem>().UILink(), 10, typeof(HomeCookingSpeedSkill)); // check below for annotation
             // how long it will take to craft the item , the recipe name again ,           change this to recipe name     (time taken)
-            this.Initialize("Flaked Salmon Salad With a honey and beet Garnish", typeof(Flaked Salmon Salad With a honey and beet GarnishRecipe));
+            this.Initialize("FlakedHoneySalad", typeof(FlakedHoneySaladRecipe));
             //       how its seen in the workbench   , Your recipe name
             CraftingComponent.AddRecipe(typeof(StoveObject), this);
             // add the recipe to craftin table . (workbench needed)

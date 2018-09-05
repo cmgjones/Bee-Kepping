@@ -32,7 +32,7 @@ namespace Eco.Mods.TechTree
 
     public partial class PastaWithTunaAndTomatoSauceRecipe : Recipe // "JerkSalmonWithRiceAndBeetsRecipe : Recipe" labels the name of the recipe that will be displayed in the workbench.
     {
-        publicPastaWithTunaAndTomatoSauceRecipe() // include the same name as the food you are attempting to create before recipe eg, yourfoodrecipe()
+        public PastaWithTunaAndTomatoSauceRecipe() // include the same name as the food you are attempting to create before recipe eg, yourfoodrecipe()
         {
             this.Products = new CraftingElement[] // dont touch this
             {

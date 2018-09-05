@@ -30,9 +30,9 @@ namespace Eco.Mods.TechTree
 
     [RequiresSkill(typeof(CampfireCreationsSkill), 4)]     // use the wiki to identify the different skill lines and put here what they will need for exmaple the more complicated the recipe and more resource intensive the higher the level that should be required.
 
-    public partial class Pancakes With HoneyRecipe : Recipe // "Pancakes With HoneyRecipe : Recipe" labels the name of the recipe that will be displayed in the workbench.
+    public partial class PancakesHoneyRecipe : Recipe // "Pancakes With HoneyRecipe : Recipe" labels the name of the recipe that will be displayed in the workbench.
     {
-        public Pancakes With HoneyRecipe() // include the same name as the food you are attempting to create before recipe eg, yourfoodrecipe()
+        public PancakesHoneyRecipe() // include the same name as the food you are attempting to create before recipe eg, yourfoodrecipe()
         {
             this.Products = new CraftingElement[] // dont touch this
             {
