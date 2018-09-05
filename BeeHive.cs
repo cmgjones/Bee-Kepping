@@ -37,8 +37,7 @@ namespace Eco.Mods.TechTree
     [RequireComponent(typeof(CraftingComponent))]
     [RequireComponent(typeof(SolidGroundComponent))]
     [RequireComponent(typeof(RoomRequirementsComponent))]
-    [RequireRoomContainment]
-    [RequireRoomVolume(25)]
+  
     public partial class BeeHiveObject :
         WorldObject
     {
@@ -47,7 +46,7 @@ namespace Eco.Mods.TechTree
 
         protected override void Initialize()
         {
-            this.GetComponent<MinimapComponent>().Initialize("Crafting");                                 
+            this.GetComponent<MinimapComponent>().Initialize("Crafting");
 
 
         }
@@ -95,7 +94,7 @@ namespace Eco.Mods.TechTree
             SkillModifiedValueManager.AddSkillBenefit(Item.Get<BeeHiveItem>().UILink(), value);
             this.CraftMinutes = value;
             this.Initialize("BeeHive", typeof(BeeHiveRecipe));
-            CraftingComponent.AddRecipe(typeof(RiceMilkChurnObject), this);
+            CraftingComponent.AddRecipe(typeof(SawmillObject), this);
         }
     }
 }
