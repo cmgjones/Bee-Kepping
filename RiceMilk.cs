@@ -18,24 +18,24 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
-    [RequiresSkill(typeof(GlassWorkingSkill), 3)]
-    public partial class GlassJarsRecipe : Recipe
+    [RequiresSkill(typeof(FarmingSkill), 3)]
+    public partial class RiceMilkRecipe : Recipe
     {
-        public GlassJarsRecipe()
+        public RiceMilkRecipe()
         {
             this.Products = new CraftingElement[]
             {
-                new CraftingElement<GlassJarsItem>(),
+                new CraftingElement<RiceMilkItem>(),
             };
             this.Ingredients = new CraftingElement[]
             {
-                new CraftingElement<GlassItem>(typeof(GlassWorkingEfficiencySkill), 4, GlassWorkingEfficiencySkill.MultiplicativeStrategy),
+                new CraftingElement<RiceItem>(typeof(FarmingEfficiencySkill), 20, FarmingEfficiencySkill.MultiplicativeStrategy),
 
             };
-            this.CraftMinutes = CreateCraftTimeValue(typeof(GlassJarsRecipe), Item.Get<GlassJarsItem>().UILink(), 2, typeof(GlassWorkingSpeedSkill));
-            this.Initialize("GlassJars", typeof(GlassJarsRecipe));
+            this.CraftMinutes = CreateCraftTimeValue(typeof(RiceMilkRecipe), Item.Get<RiceMilkItem>().UILink(), 2, typeof(FarmingSpeedSkill));
+            this.Initialize("RiceMilk", typeof(RiceMilkRecipe));
 
-            CraftingComponent.AddRecipe(typeof(KilnObject), this);
+            CraftingComponent.AddRecipe(typeof(RiceMilkChurnObject), this);
         }
     }
 
@@ -43,11 +43,11 @@ namespace Eco.Mods.TechTree
     [Serialized]
     [Weight(1000)]
     [Currency]
-    public partial class GlassJarsItem :
+    public partial class RiceMilkItem :
     Item
     {
-        public override string FriendlyName { get { return "GlassJars"; } }
-        public override string Description { get { return "simple jars"; } }
+        public override string FriendlyName { get { return "RiceMilk"; } }
+        public override string Description { get { return "A base ingridient"; } }
 
     }
 
