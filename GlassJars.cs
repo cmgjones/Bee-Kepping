@@ -18,7 +18,7 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
-    [RequiresSkill(typeof(GlassworkingSkill), 3)]
+    
     public partial class GlassJarsRecipe : Recipe
     {
         public GlassJarsRecipe()
@@ -29,7 +29,7 @@ namespace Eco.Mods.TechTree
             };
             this.Ingredients = new CraftingElement[]
             {
-                new CraftingElement<GlassItem>(typeof(GlassProduction EfficiencySkill), 4, GlassProductionEfficiencySkill.MultiplicativeStrategy),
+                new CraftingElement<GlassItem>(typeof(GlassProductionEfficiencySkill), 4, GlassProductionEfficiencySkill.MultiplicativeStrategy),
 
             };
             this.CraftMinutes = CreateCraftTimeValue(typeof(GlassJarsRecipe), Item.Get<GlassJarsItem>().UILink(), 2, typeof(GlassProductionSpeedSkill));
