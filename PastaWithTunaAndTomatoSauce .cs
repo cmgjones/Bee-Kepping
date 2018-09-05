@@ -17,7 +17,7 @@ namespace Eco.Mods.TechTree
 
     [Serialized]
     [Weight(300)]
-    public partial class PastaWithTunaAndTomatoSauce : //Name of the item in unity @DO NOT CHANGE USE A DIFFERENT NAME FROM THE UNITY VERSION
+    public partial class PastaWithTunaAndTomatoSauceItem : //Name of the item in unity @DO NOT CHANGE USE A DIFFERENT NAME FROM THE UNITY VERSION
         FoodItem
     {
         public override string FriendlyName                     { get { return " TunaPastaBake "; } }  // name given and seen when scrolling through the ingame menus
@@ -30,7 +30,7 @@ namespace Eco.Mods.TechTree
 
     [RequiresSkill(typeof(HomeCookingSkill), 3)]     // use the wiki to identify the different skill lines and put here what they will need for exmaple the more complicated the recipe and more resource intensive the higher the level that should be required.
 
-    public partial class PastaWithTunaAndTomatoSauce Recipe : Recipe // "JerkSalmonWithRiceAndBeetsRecipe : Recipe" labels the name of the recipe that will be displayed in the workbench.
+    public partial class PastaWithTunaAndTomatoSauceRecipe : Recipe // "JerkSalmonWithRiceAndBeetsRecipe : Recipe" labels the name of the recipe that will be displayed in the workbench.
     {
         publicPastaWithTunaAndTomatoSauceRecipe() // include the same name as the food you are attempting to create before recipe eg, yourfoodrecipe()
         {
