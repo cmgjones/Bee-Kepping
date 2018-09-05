@@ -50,7 +50,7 @@ namespace Eco.Mods.TechTree
 
                 new CraftingElement<JarOfHoneyItem>(typeof(HomeCookingEfficiencySkill), 5, HomeCookingEfficiencySkill.MultiplicativeStrategy),
 
-                new CraftingElement<HuckleBerryItem>(typeof(HomeCookingEfficiencySkill), 10, HomeCookingEfficiencySkill.MultiplicativeStrategy),
+                new CraftingElement<HuckleberriesItem>(typeof(HomeCookingEfficiencySkill), 10, HomeCookingEfficiencySkill.MultiplicativeStrategy),
 
             };
             this.CraftMinutes = CreateCraftTimeValue(typeof(SteakBurritoRecipe), Item.Get<SteakBurritoItem>().UILink(), 10, typeof(HomeCookingSpeedSkill)); // check below for annotation

@@ -42,7 +42,7 @@ namespace Eco.Mods.TechTree
             };
             this.Ingredients = new CraftingElement[] // This is where you will decide what the ingriedients are  to create your food item
             {
-                new CraftingElement<RawFishItem>(typeof(BasicBakingEfficiencySkill), 4, BasicBakingEfficiencySkill.MultiplicativeStrategy),  //this is 1 element of crafting see below for more acurate annotation
+                 //this is 1 element of crafting see below for more acurate annotation
             //  new , ingriedient , Rawsausage  , what skill its associated with , (4) amount of that ingridient, this is where it counts in the efficiencies leave this here.
             // If you require more ingridients copy and paste the line above and edit it to include another ingridient see below for example
             //copied & Pasted
