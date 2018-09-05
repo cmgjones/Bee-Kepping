@@ -18,7 +18,7 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
-    [RequiresSkill(typeof(FarmingSkill), 3)]
+    [RequiresSkill(typeof(HomeCookingSkill), 3)]
     public partial class JarOfHoneyRecipe : Recipe
     {
         public JarOfHoneyRecipe()
@@ -29,10 +29,10 @@ namespace Eco.Mods.TechTree
             };
             this.Ingredients = new CraftingElement[]
             {
-                new CraftingElement<GlassJarsItem>(typeof(FarmingEfficiencySkill), 2, FarmingEfficiencySkill.MultiplicativeStrategy),
+                new CraftingElement<GlassJarsItem>(typeof(HomeCookingEfficiencySkill), 2, HomeCookingEfficiencySkill.MultiplicativeStrategy),
 
             };
-            this.CraftMinutes = CreateCraftTimeValue(typeof(JarOfHoneyRecipe), Item.Get<JarOfHoneyItem>().UILink(), 2, typeof(FarmingSpeedSkill));
+            this.CraftMinutes = CreateCraftTimeValue(typeof(JarOfHoneyRecipe), Item.Get<JarOfHoneyItem>().UILink(), 2, typeof(HomeCookingSpeedSkill));
             this.Initialize("JarOfHoney", typeof(JarOfHoneyRecipe));
 
             CraftingComponent.AddRecipe(typeof(BeeHiveObject), this);

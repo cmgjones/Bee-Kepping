@@ -47,7 +47,7 @@ namespace Eco.Mods.TechTree
             // If you require more ingridients copy and paste the line above and edit it to include another ingridient see below for example
             //copied & Pasted
                 new CraftingElement<FlourItem>(typeof(BasicBakingEfficiencySkill), 14, BasicBakingEfficiencySkill.MultiplicativeStrategy),
-				        new CraftingElement<HuckleBerriesItem>(typeof(BasicBakingEfficiencySkill), 20, BasicBakingEfficiencySkill.MultiplicativeStrategy),
+				        new CraftingElement<HuckleberriesItem>(typeof(BasicBakingEfficiencySkill), 20, BasicBakingEfficiencySkill.MultiplicativeStrategy),
 				        new CraftingElement<JarOfHoneyItem>(typeof(BasicBakingEfficiencySkill), 2, BasicBakingEfficiencySkill.MultiplicativeStrategy),
             };
             this.CraftMinutes = CreateCraftTimeValue(typeof(HoneyBerryPieRecipe), Item.Get<HoneyBerryPieItem>().UILink(), 10, typeof(BasicBakingSpeedSkill)); // check below for annotation

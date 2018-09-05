@@ -18,7 +18,7 @@ namespace Eco.Mods.TechTree
     using Eco.World.Blocks;
     using Eco.Gameplay.Pipes;
 
-    [RequiresSkill(typeof(FarmingSkill), 3)]
+    [RequiresSkill(typeof(HomeCookingSkill), 3)]
     public partial class RiceMilkRecipe : Recipe
     {
         public RiceMilkRecipe()
@@ -29,10 +29,10 @@ namespace Eco.Mods.TechTree
             };
             this.Ingredients = new CraftingElement[]
             {
-                new CraftingElement<RiceItem>(typeof(FarmingEfficiencySkill), 20, FarmingEfficiencySkill.MultiplicativeStrategy),
+                new CraftingElement<RiceItem>(typeof(HomeCookingEfficiencySkill), 20, HomeCookingEfficiencySkill.MultiplicativeStrategy),
 
             };
-            this.CraftMinutes = CreateCraftTimeValue(typeof(RiceMilkRecipe), Item.Get<RiceMilkItem>().UILink(), 2, typeof(FarmingSpeedSkill));
+            this.CraftMinutes = CreateCraftTimeValue(typeof(RiceMilkRecipe), Item.Get<RiceMilkItem>().UILink(), 2, typeof(HomeCookingSpeedSkill));
             this.Initialize("RiceMilk", typeof(RiceMilkRecipe));
 
             CraftingComponent.AddRecipe(typeof(RiceMilkChurnObject), this);

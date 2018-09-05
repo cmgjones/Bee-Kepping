@@ -48,9 +48,9 @@ namespace Eco.Mods.TechTree
             //copied & Pasted
 				        new CraftingElement<JarOfHoneyItem>(typeof(CampfireCreationsEfficiencySkill), 3, CampfireCreationsEfficiencySkill.MultiplicativeStrategy),
             };
-            this.CraftMinutes = CreateCraftTimeValue(typeof(Pancakes With HoneyRecipe), Item.Get<PancakesHoneyItem>().UILink(), 2, typeof(CampfireCreationsSpeedSkill)); // check below for annotation
+            this.CraftMinutes = CreateCraftTimeValue(typeof(PancakesHoneyRecipe), Item.Get<PancakesHoneyItem>().UILink(), 2, typeof(CampfireCreationsSpeedSkill)); // check below for annotation
             // how long it will take to craft the item , the recipe name again ,           change this to recipe name     (time taken)
-            this.Initialize("Pancakes With Honey", typeof(Pancakes With HoneyRecipe));
+            this.Initialize("Pancakes With Honey", typeof(PancakesHoneyRecipe));
             //       how its seen in the workbench   , Your recipe name
             CraftingComponent.AddRecipe(typeof(StoveObject), this);
             // add the recipe to craftin table . (workbench needed)
